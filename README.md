@@ -72,4 +72,3 @@ Para iniciar el entorno interactivo:
 ```bash
 jupyter notebook Waze_Laboratorio_Python_ES.ipynb
 ```
-
