@@ -9,7 +9,7 @@ Este proyecto tiene como objetivo analizar la actividad de los usuarios de Waze 
 El repositorio está organizado con los siguientes archivos principales:
 
 * **[Waze_Laboratorio_Python_ES.ipynb](Waze_Laboratorio_Python_ES.ipynb)**: Notebook de Jupyter con el proceso completo de carga, limpieza preliminar, análisis exploratorio de datos (EDA) y cálculo de métricas derivadas en español.
-* **[waze_dataset.csv](waze_dataset.csv)**: Conjunto de datos con 14,999 registros de usuarios y sus métricas de interacción mensual.
+* **[waze_dataset.csv](waze_dataset.csv)**: Conjunto de datos en formato CSV con métricas mensuales de actividad vial de los usuarios.
 * **[images/](images/)**: Carpeta de recursos gráficos utilizada para documentar las etapas de la metodología PACE.
 
 ---
@@ -49,12 +49,21 @@ No se detectó un desequilibrio estadístico significativo en el abandono según
 El flujo de trabajo documentado en el notebook sigue el marco PACE:
 
 1. **Plan (Planificar):** Comprensión del negocio, revisión del diccionario de datos y definición de las preguntas analíticas de interés.
-2. **Analyze (Analizar):** Carga y limpieza preliminar de datos, aislamiento y caracterización de valores faltantes (700 registros sin etiqueta `label`), cálculo de descriptivos estadísticos basados en medianas para contrarrestar el impacto de valores atípicos (outliers).
-3. **Construct (Construir):** Creación de nuevas columnas derivadas:
-    * `km_per_drive` (Kilómetros por viaje)
-    * `km_per_driving_day` (Kilómetros conducidos por día activo)
-    * `drives_per_driving_day` (Viajes realizados por día activo)
+2. **Analyze (Analizar):** Carga y limpieza preliminar de datos, aislamiento y caracterización de valores faltantes. 
+   
+   > [!WARNING]
+   > Se detectaron 700 registros que no cuentan con la etiqueta objetivo (`label`). La distribución de las variables en este subconjunto nulo es similar a la del resto de los datos, sugiriendo una ausencia aleatoria (MCAR), por lo que estas filas deben excluirse antes de entrenar un clasificador predictivo.
+
+3. **Construct (Construir):** Creación e ingeniería de nuevas columnas derivadas basadas en métricas de conducción (distancias por viaje, km conducidos y viajes promedio por día de uso).
 4. **Execute (Ejecutar):** Formulación de respuestas cuantitativas, síntesis de conclusiones operativas y preparación del resumen ejecutivo para los directivos de Waze.
+
+```mermaid
+flowchart TD
+    A[Cargar Datos de Actividad] --> B[Identificar e Investigar Nulos en Label]
+    B --> C[Calcular Métricas de Conducción]
+    C --> D[Calcular Proporción de Actividad]
+    D --> E[Fase Posterior: Modelado Predictivo de Churn]
+```
 
 ---
 
