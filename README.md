@@ -1,4 +1,4 @@
-# Proyecto de Análisis de Abandono de Usuarios (Waze)
+# 🚗 Proyecto de Análisis de Abandono de Usuarios (Waze)
 
 Este proyecto tiene como objetivo analizar la actividad de los usuarios de Waze para identificar comportamientos correlacionados con la deserción o abandono (churn). El análisis preliminar e inspección de datos se estructuró bajo el marco metodológico **PACE** (Plan, Analyze, Construct, Execute).
 
@@ -8,9 +8,9 @@ Este proyecto tiene como objetivo analizar la actividad de los usuarios de Waze 
 
 El repositorio está organizado con los siguientes archivos principales:
 
-* **`Waze_Laboratorio_Python_ES.ipynb`**: Notebook de Jupyter con el proceso completo de carga, limpieza preliminar, análisis exploratorio de datos (EDA) y cálculo de métricas derivadas en español.
-* **`waze_dataset.csv`**: Conjunto de datos con 14,999 registros de usuarios y sus métricas de interacción mensual.
-* **`images/`**: Carpeta de recursos gráficos utilizada para documentar las etapas de la metodología PACE.
+* **[Waze_Laboratorio_Python_ES.ipynb](Waze_Laboratorio_Python_ES.ipynb)**: Notebook de Jupyter con el proceso completo de carga, limpieza preliminar, análisis exploratorio de datos (EDA) y cálculo de métricas derivadas en español.
+* **[waze_dataset.csv](waze_dataset.csv)**: Conjunto de datos con 14,999 registros de usuarios y sus métricas de interacción mensual.
+* **[images/](images/)**: Carpeta de recursos gráficos utilizada para documentar las etapas de la metodología PACE.
 
 ---
 
@@ -60,7 +60,7 @@ El flujo de trabajo documentado en el notebook sigue el marco PACE:
 
 ## 🚀 Requisitos e Instalación
 
-Para ejecutar y explorar el notebook de análisis localmente, se requiere contar con un entorno de Python 3 y las siguientes librerías de manipulación de datos instaladas:
+Para ejecutar y explorar el [Waze_Laboratorio_Python_ES.ipynb](Waze_Laboratorio_Python_ES.ipynb) localmente, se requiere contar con un entorno de Python 3 y las siguientes librerías de manipulación de datos instaladas:
 
 ```bash
 # Instalación de librerías esenciales
@@ -72,3 +72,4 @@ Para iniciar el entorno interactivo:
 ```bash
 jupyter notebook Waze_Laboratorio_Python_ES.ipynb
 ```
+
