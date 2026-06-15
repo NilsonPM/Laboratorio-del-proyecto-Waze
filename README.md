@@ -49,8 +49,8 @@ No se detectó un desequilibrio estadístico significativo en el abandono según
 El flujo de trabajo documentado en el notebook sigue el marco PACE:
 
 1. **Plan (Planificar):** Comprensión del negocio, revisión del diccionario de datos y definición de las preguntas analíticas de interés.
-2. **Analyze (Analizar):** Carga y limpieza preliminar de datos, aislamiento y caracterización de valores faltantes. 
-   
+2. **Analyze (Analizar):** Carga y limpieza preliminar de datos, aislamiento y caracterización de valores faltantes.
+
    > [!WARNING]
    > Se detectaron 700 registros que no cuentan con la etiqueta objetivo (`label`). La distribución de las variables en este subconjunto nulo es similar a la del resto de los datos, sugiriendo una ausencia aleatoria (MCAR), por lo que estas filas deben excluirse antes de entrenar un clasificador predictivo.
 
